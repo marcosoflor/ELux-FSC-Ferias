@@ -46,7 +46,7 @@
                 </div>
                 <div>
                     <h1 class="text-xl font-bold text-slate-800">Mapa Interativo</h1>
-                    <p class="text-slate-500 text-xs">Atualizado: Destaque para Não Programados</p>
+                    <p class="text-slate-500 text-xs">Atualizado: Nova Configuração de Calendário</p>
                 </div>
             </div>
             
@@ -294,11 +294,11 @@
 
         const TEAM_DATA = [
             { name: "ELTON DE JESUS MARQUES ORTIZ", role: "Automação", shift: 1, schedule: ["Folga", "Domingo", "2h. Treinamento / 59", "59", "Corretiva", "Natal", "Banco", "Folga", "Domingo", "59", "59", "Corretiva", "Ano Novo", "59", "Folga", "Domingo"] },
-            { name: "FLAVIO FERNANDO BORATO", role: "Automação", shift: 1, schedule: ["", "Domingo", "2h. Treinamento / Corretiva", "Corretiva", "Corretiva", "Natal", "Corretiva", "25", "Domingo", "Corretiva", "Corretiva", "Corretiva", "Ano Novo", "Corretiva", "Testes/Enchimento", "Domingo"] },
-            { name: "DIEGO APARECIDO DE LIMA", role: "Elétrica", shift: 1, schedule: ["", "Domingo", "2h. Treinamento / Corretiva", "Corretiva", "Corretiva", "Natal", "Corretiva", "25", "Domingo", "Corretiva", "Corretiva", "Corretiva", "Ano Novo", "Corretiva", "Testes/Enchimento", "Domingo"] },
+            { name: "FLAVIO FERNANDO BORATO", role: "Automação", shift: 1, schedule: ["", "Domingo", "2h. Treinamento / Corretiva", "Corretiva", "Corretiva", "Natal", "Corretiva", "59", "Domingo", "Corretiva", "Corretiva", "Corretiva", "Ano Novo", "Corretiva", "Testes/Enchimento", "Domingo"] },
+            { name: "DIEGO APARECIDO DE LIMA", role: "Elétrica", shift: 1, schedule: ["", "Domingo", "2h. Treinamento / Corretiva", "Corretiva", "Corretiva", "Natal", "Corretiva", "59", "Domingo", "Corretiva", "Corretiva", "Corretiva", "Ano Novo", "Corretiva", "Testes/Enchimento", "Domingo"] },
             { name: "MARCOS R. TORINI", role: "Elétrica", shift: 1, schedule: ["4", "Domingo", "2h. Treinamento / 7", "Corretiva", "Banco", "Natal", "Banco", "Banco", "Domingo", "64", "64", "Corretiva", "Ano Novo", "64", "Testes/Enchimento", "Domingo"] },
-            { name: "ANDERSON LUIZ SALA", role: "Mecânica", shift: 1, schedule: ["Banco", "Domingo", "2h. Treinamento / 26", "26", "Corretiva", "Natal", "Banco", "Banco", "Domingo", "18", "18", "Banco", "Ano Novo", "18", "Testes/Enchimento", "Domingo"] },
-            { name: "LEONARDO GOMES", role: "Mecânica", shift: 1, schedule: ["3", "Domingo", "2h. Treinamento / 3", "29", "Corretiva", "Natal", "11", "32", "Domingo", "31", "31", "Corretiva", "Ano Novo", "30", "Testes/Enchimento", "Domingo"] },
+            { name: "ANDERSON LUIZ SALA", role: "Mecânica", shift: 1, schedule: ["Banco", "Domingo", "2h. Treinamento / 27", "27", "Corretiva", "Natal", "Banco", "Banco", "Domingo", "18", "18", "Banco", "Ano Novo", "18", "Testes/Enchimento", "Domingo"] },
+            { name: "LEONARDO GOMES", role: "Mecânica", shift: 1, schedule: ["3", "Domingo", "2h. Treinamento / 3", "29", "Corretiva", "Natal", "18", "32", "Domingo", "31", "31", "Corretiva", "Ano Novo", "30", "Testes/Enchimento", "Domingo"] },
             { name: "FERNANDO SEBASTIAO DE OLIVEIRA", role: "Mecânica", shift: 1, schedule: ["Banco", "Domingo", "2h. Treinamento / Corretiva", "Corretiva", "Corretiva", "Natal", "Corretiva", "32", "Domingo", "Corretiva", "Corretiva", "Corretiva", "Ano Novo", "Corretiva", "Testes/Enchimento", "Domingo"] },
             { name: "RICARDO APARECIDO PAES", role: "Mecânica", shift: 1, schedule: ["24", "Domingo", "2h. Treinamento / 14 / 15 / 16 / 17", "29", "Corretiva", "Natal", "18", "32", "Domingo", "18", "18", "Corretiva", "Ano Novo", "18", "Testes/Enchimento", "Domingo"] },
             { name: "SIDINEI DONIZETI MULLER", role: "Mecânica", shift: 1, schedule: ["3", "Domingo", "2h. Treinamento / 3", "5 / 6", "Corretiva", "Natal", "Banco", "32", "Domingo", "31", "31", "Corretiva", "Ano Novo", "30", "Testes/Enchimento", "Domingo"] },
@@ -308,7 +308,7 @@
             { name: "MATHEUS VINICIUS LAPLACA CONTI", role: "Elétrica", shift: 2, schedule: ["27", "Domingo", "2h. Treinamento / Corretiva / 21", "Corretiva / 21", "Corretiva", "Natal", "Corretiva / 21", "60", "Domingo", "Corretiva / 60", "Banco", "Banco", "Ano Novo", "Corretiva", "Testes/Enchimento", "Domingo"] },
             { name: "RICARDO DE ALMEIDA DEMICO", role: "Elétrica", shift: 2, schedule: ["", "Domingo", "2h. Treinamento / 21", "21", "Corretiva", "Natal", "Banco", "Banco", "Domingo", "60", "Corretiva", "Corretiva", "Ano Novo", "", "Testes/Enchimento", "Domingo"] },
             { name: "HERCULES JOSE DOS SANTOS", role: "Mecânica", shift: 2, schedule: ["Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias"] },
-            { name: "JORGE AUGUSTO RINALDI", role: "Mecânica", shift: 2, schedule: ["27", "Domingo", "2h. Treinamento / 33", "33", "Corretiva", "Natal", "19", "19", "Domingo", "20", "20", "Corretiva", "Ano Novo", "34", "Testes/Enchimento", "Domingo"] },
+            { name: "JORGE AUGUSTO RINALDI", role: "Mecânica", shift: 2, schedule: ["27", "Domingo", "2h. Treinamento / 33", "33", "Corretiva", "Natal", "Banco", "Banco", "Domingo", "20", "20", "Corretiva", "Ano Novo", "34", "Testes/Enchimento", "Domingo"] },
             { name: "FÁBIO TRINDADE", role: "Mecânica", shift: 2, schedule: ["Banco", "Domingo", "2h. Treinamento / 22", "9", "Corretiva", "Natal", "19", "19", "Domingo", "20", "Banco", "Banco", "Ano Novo", "34", "Testes/Enchimento", "Domingo"] },
             { name: "FABIO EUGENIO ROMERO", role: "Automação", shift: 3, schedule: ["Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Férias", "Corretiva", "Férias", "Férias", "Férias", "Férias"] },
             { name: "MARCIO RODRIGUES DA SILVA", role: "Elétrica", shift: 3, schedule: ["Folga", "34 / 35 / 36 / 37", "2h. Treinamento / 38 / 58", "39 / 40 / 41", "Folga", "Natal", "42 / 43 / 44 / 45", "Folga", "46 / 47 / 48 / 49", "50 / 51 / 52 / 53", "54 / 55 / 56 / 57", "Folga", "Ano Novo", "Validação", "Folga", ""] },
@@ -321,11 +321,14 @@
         // Type: 'partial' = Impacto Parcial (Continuidade em outros dias)
         // Type: 'total' = Não Executado (Cancelado no dia, sem continuidade)
         const IMPACTS = [
-            { who: "ANDERSON LUIZ SALA", date: "20/12", taskId: 26, taskName: "452099-Célula de colagem de painel L5", severity: "Crítico", type: "partial" },
-            { who: "ANDERSON LUIZ SALA", date: "26/12", taskId: 26, taskName: "452099-Célula de colagem de painel L5", severity: "Crítico", type: "partial" },
+            { who: "ANDERSON LUIZ SALA", date: "22/12", taskId: 26, taskName: "452099-Célula de colagem de painel L5", severity: "Crítico", type: "partial" },
+            { who: "ANDERSON LUIZ SALA", date: "23/12", taskId: 26, taskName: "452099-Célula de colagem de painel L5", severity: "Crítico", type: "partial" },
+            { who: "ANDERSON LUIZ SALA", date: "20/12", taskId: 27, taskName: "Esteira de roletes teste de estanqueidade L4", severity: "Crítico", type: "partial" },
             { who: "ANDERSON LUIZ SALA", date: "27/12", taskId: 18, taskName: "Teste funcional (2 piores) L4", severity: "Melhoria", type: "partial" },
             { who: "ANDERSON LUIZ SALA", date: "31/12", taskId: 18, taskName: "Teste funcional (2 piores) L4", severity: "Melhoria", type: "partial" },
             
+            { who: "LEONARDO GOMES", date: "26/12", taskId: 11, taskName: "EMBALADORA MÁQUINAPACK L3", severity: "Crítico", type: "total" },
+
             { who: "SIDINEI DONIZETI MULLER", date: "26/12", taskId: 32, taskName: "451771-Systec velha", severity: "Normal", type: "total" },
             
             { who: "RICARDO DE ALMEIDA DEMICO", date: "26/12", taskId: 25, taskName: "Time 1 - L4", severity: "Segurança", type: "partial" },
@@ -342,6 +345,9 @@
             
             { who: "FERNANDO SEBASTIAO DE OLIVEIRA", date: "20/12", taskId: 24, taskName: "510313-Esteira de montagem mesa L4", severity: "Normal", type: "total" },
             
+            { who: "JORGE AUGUSTO RINALDI", date: "26/12", taskId: 19, taskName: "Esteira talisca pós transf. L4", severity: "Normal", type: "total" },
+            { who: "JORGE AUGUSTO RINALDI", date: "27/12", taskId: 19, taskName: "Esteira talisca pós transf. L4", severity: "Normal", type: "total" },
+
             // HERCULES (FÉRIAS - ALL TOTAL)
             { who: "HERCULES JOSE DOS SANTOS", date: "20/12", taskId: 27, taskName: "Esteira de roletes teste de estanqueidade L4", severity: "Crítico", type: "total" },
             { who: "HERCULES JOSE DOS SANTOS", date: "22/12", taskId: 7, taskName: "510169.58-Elevador de topo L3", severity: "Crítico", type: "total" },
