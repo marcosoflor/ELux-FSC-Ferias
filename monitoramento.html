@@ -76,6 +76,7 @@
         // --- DATA ---
         const CURRENT_DATE_STR = "24/12"; 
 
+        // Mapeamento de Datas Planejadas (Baseado no histórico)
         const DATE_MAP = {
             "156878": "22/12", "157453": "22/12", "157454": "22/12", "157455": "22/12", "162112": "22/12",
             "174416": "20/12", "174521": "22/12", "174522": "23/12", "175283": "26/12", "176204": "27/12",
@@ -100,199 +101,51 @@
             "158371": "20/12", "176347": "22/12", "177073": "20/12", "180679": "26/12"
         };
 
+        // --- BANCO DE DADOS DE STATUS ATUALIZADO (26/12) ---
+        // Status: 'done' (Finished), 'partial' (Started)
         const STATUS_DB = {
-            "156878": { status: "done", date: "22/12", who: "Marcio Rodrigues" },
-            "157453": { status: "partial", date: "22/12", who: "Ricardo Aparecido" },
+            // Log de Atuações + Status da Ordem
+            "156878": { status: "done", date: "24/12", who: "Sergio Aparecido" },
+            "157453": { status: "partial", date: "22/12", who: "Ricardo Aparecido" }, // Started
             "174416": { status: "done", date: "23/12", who: "Nilson Carlos" },
-            "177393": { status: "partial", date: "22/12", who: "Gabriel Feitosa" },
-            "177560": { status: "partial", date: "23/12", who: "Leonardo Gomes" },
-            "177584": { status: "done", date: "23/12", who: "Sistema/Manual" },
+            "177393": { status: "partial", date: "22/12", who: "Gabriel Feitosa" }, // Started
+            "177560": { status: "partial", date: "24/12", who: "Leonardo Gomes" }, // Started
+            "177584": { status: "done", date: "24/12", who: "Marcio Rodrigues" },
             "177585": { status: "done", date: "23/12", who: "Sergio Aparecido" },
             "177586": { status: "done", date: "23/12", who: "Marcio Rodrigues" },
             "177587": { status: "done", date: "23/12", who: "Sergio Aparecido" },
             "177588": { status: "done", date: "22/12", who: "Sergio Aparecido" },
             "177589": { status: "done", date: "22/12", who: "Marcio Rodrigues" },
-            "180891": { status: "partial", date: "22/12", who: "Jorge Augusto" },
-            "180893": { status: "partial", date: "24/12", who: "Equipe Linhas" },
+            "180891": { status: "partial", date: "22/12", who: "Jorge Augusto" }, // Started
+            "180893": { status: "partial", date: "24/12", who: "Luciano Jose" }, // Started
             "180898": { status: "done", date: "23/12", who: "Ricardo De Almeida" },
-            "180900": { status: "partial", date: "23/12", who: "Gabriel Feitosa" },
-            "180903": { status: "partial", date: "22/12", who: "Matheus Vinicius" },
-            "181088": { status: "partial", date: "23/12", who: "Elton De Jesus" },
-            "181090": { status: "partial", date: "23/12", who: "Marcos Torini" },
+            "180900": { status: "partial", date: "23/12", who: "Luciano Jose" }, // Started
+            "180903": { status: "partial", date: "24/12", who: "Anderson Luiz" }, // Started
+            "181088": { status: "partial", date: "24/12", who: "Elton De Jesus" }, // Started
+            "181090": { status: "partial", date: "23/12", who: "Marcos Torini" }, // Started
+            
+            // Metal
             "157197": { status: "done", date: "22/12", who: "Marcos Bruno" },
             "165138": { status: "done", date: "23/12", who: "Renan Fatore" },
-            "165967": { status: "done", date: "22/12", who: "Renan Fatore" },
+            "165967": { status: "done", date: "23/12", who: "Renan Fatore" },
             "166652": { status: "done", date: "23/12", who: "Renan Fatore" },
-            "167545": { status: "partial", date: "24/12", who: "Equipe Metal" },
-            "177256": { status: "partial", date: "23/12", who: "Bruno Donizete" },
-            "180776": { status: "partial", date: "23/12", who: "Marcos Bruno" },
-            "180807": { status: "partial", date: "22/12", who: "Deivid Jose" },
-            "180937": { status: "done", date: "23/12", who: "Marcio Pereira" },
-            "180939": { status: "done", date: "22/12", who: "Marcio Pereira" },
+            "167545": { status: "partial", date: "24/12", who: "Renan Fatore" }, // Started
+            "177256": { status: "partial", date: "24/12", who: "Marcos Bruno" }, // Started
+            "180776": { status: "partial", date: "23/12", who: "Marcos Bruno" }, // Started
+            "180807": { status: "partial", date: "23/12", who: "Luan Carlos" }, // Started
+            "180937": { status: "done", date: "23/12", who: "Deivid Jose" },
+            "180939": { status: "done", date: "22/12", who: "Mauricio Freri" },
             "180943": { status: "done", date: "23/12", who: "Paulo Henrique" },
-            "180936": { status: "done", date: "23/12", who: "Marcio Pereira" },
-            "158371": { status: "partial", date: "20/12", who: "Cezar Aparecido" },
-            "177073": { status: "partial", date: "22/12", who: "Rodrigo Boni" },
-            "181067": { status: "done", date: "21/12", who: "Bruno Birce" },
-            "181316": { status: "done", date: "21/12", who: "Bruno Birce" },
-            "181085": { status: "done", date: "23/12", who: "Bruno Birce" },
-            "181448": { status: "done", date: "23/12", who: "Bruno Birce" },
-            "181449": { status: "done", date: "23/12", who: "Bruno Birce" },
-            "181450": { status: "done", date: "23/12", who: "Bruno Birce" },
-            "180526": { status: "done", date: "20/12", who: "Marcio Pereira" },
-            "181223": { status: "done", date: "20/12", who: "Marcio Pereira" },
-            "169062": { status: "done", date: "19/12", who: "Deivid Jose" },
-            "181300": { status: "done", date: "20/12", who: "Cezar Aparecido" },
-            "181297": { status: "done", date: "20/12", who: "Marcos Bruno" },
-            "181298": { status: "done", date: "20/12", who: "Marcos Bruno" },
-            "181299": { status: "done", date: "20/12", who: "Marcos Bruno" },
-            "181360": { status: "done", date: "22/12", who: "Marcos Bruno" },
-            "179144": { status: "done", date: "23/12", who: "Marcos Bruno" },
-            "179105": { status: "done", date: "23/12", who: "Marcos Bruno" },
-            "181340": { status: "done", date: "22/12", who: "Maykel Antonio" },
-            "181341": { status: "done", date: "22/12", who: "Maykel Antonio" },
-            "180716": { status: "done", date: "23/12", who: "Maykel Antonio" },
-            "181358": { status: "done", date: "22/12", who: "Maykel Antonio" },
-            "181249": { status: "done", date: "20/12", who: "Matheus Vinicius" },
-            "181445": { status: "done", date: "23/12", who: "Matheus Vinicius" },
-            "181311": { status: "done", date: "20/12", who: "Bruno Domingos" },
-            "181310": { status: "done", date: "20/12", who: "Bruno Domingos" },
-            "181308": { status: "done", date: "20/12", who: "Bruno Domingos" },
-            "181342": { status: "done", date: "22/12", who: "Bruno Domingos" },
-            "181345": { status: "done", date: "22/12", who: "Bruno Domingos" },
-            "181346": { status: "done", date: "22/12", who: "Bruno Domingos" },
-            "181347": { status: "done", date: "22/12", who: "Bruno Domingos" },
-            "181296": { status: "done", date: "20/12", who: "Sergio Willian" },
-            "180278": { status: "done", date: "20/12", who: "Rodrigo Boni" },
-            "181248": { status: "done", date: "20/12", who: "Rodrigo Boni" },
-            "181315": { status: "done", date: "21/12", who: "Rodrigo Boni" },
-            "181359": { status: "done", date: "22/12", who: "Rodrigo Boni" },
-            "181233": { status: "done", date: "20/12", who: "Aliston Henrique" },
-            "181309": { status: "done", date: "20/12", who: "Aliston Henrique" },
-            "181099": { status: "done", date: "20/12", who: "Aliston Henrique" },
-            "181236": { status: "done", date: "20/12", who: "Sidinei Donizeti" },
-            "181237": { status: "done", date: "20/12", who: "Sidinei Donizeti" },
-            "181238": { status: "done", date: "20/12", who: "Sidinei Donizeti" },
-            "180917": { status: "done", date: "20/12", who: "Sidinei Donizeti" },
-            "181247": { status: "done", date: "20/12", who: "Jorge Augusto" },
-            "181294": { status: "done", date: "20/12", who: "Jorge Augusto" },
-            "181295": { status: "done", date: "20/12", who: "Jorge Augusto" },
-            "180720": { status: "done", date: "20/12", who: "Marcos Torini" },
-            "181334": { status: "done", date: "22/12", who: "Marcos Torini" },
-            "181335": { status: "done", date: "22/12", who: "Marcos Torini" },
-            "181372": { status: "done", date: "22/12", who: "Marcos Torini" },
-            "181218": { status: "done", date: "20/12", who: "Sergio Aparecido" },
-            "181219": { status: "done", date: "20/12", who: "Sergio Aparecido" },
-            "181220": { status: "done", date: "20/12", who: "Sergio Aparecido" },
-            "181221": { status: "done", date: "20/12", who: "Sergio Aparecido" },
-            "180155": { status: "done", date: "20/12", who: "Sergio Aparecido" },
-            "179538": { status: "done", date: "20/12", who: "Sergio Aparecido" },
-            "180557": { status: "done", date: "20/12", who: "Sergio Aparecido" },
-            "179613": { status: "done", date: "20/12", who: "Sergio Aparecido" },
-            "179619": { status: "done", date: "21/12", who: "Sergio Aparecido" },
-            "179930": { status: "done", date: "21/12", who: "Sergio Aparecido" },
-            "180282": { status: "done", date: "21/12", who: "Vinicius Nepomuceno" },
-            "180283": { status: "done", date: "21/12", who: "Vinicius Nepomuceno" },
-            "181312": { status: "done", date: "21/12", who: "Priscila Maria" },
-            "181314": { status: "done", date: "21/12", who: "Priscila Maria" },
-            "181313": { status: "done", date: "21/12", who: "Priscila Maria" },
-            "181111": { status: "done", date: "21/12", who: "Priscila Maria" },
-            "181367": { status: "done", date: "22/12", who: "Paulo Henrique" },
-            "181447": { status: "done", date: "23/12", who: "Paulo Henrique" },
-            "166142": { status: "done", date: "21/12", who: "Gabriel Feitosa" },
-            "181307": { status: "done", date: "21/12", who: "Gabriel Feitosa" },
-            "181306": { status: "done", date: "21/12", who: "Gabriel Feitosa" },
-            "181371": { status: "done", date: "23/12", who: "Gabriel Feitosa" },
-            "181010": { status: "done", date: "22/12", who: "Flavio Fernando" },
-            "175500": { status: "done", date: "23/12", who: "Flavio Fernando" },
-            "181412": { status: "done", date: "23/12", who: "Flavio Fernando" },
-            "181222": { status: "done", date: "20/12", who: "Luan Carlos" },
-            "181305": { status: "done", date: "20/12", who: "Luan Carlos" },
-            "181304": { status: "done", date: "21/12", who: "Luan Carlos" },
-            "180171": { status: "done", date: "21/12", who: "Marcio Rodrigues" },
-            "179553": { status: "done", date: "22/12", who: "Marcio Rodrigues" },
-            "179552": { status: "done", date: "22/12", who: "Marcio Rodrigues" },
-            "177586": { status: "done", date: "23/12", who: "Marcio Rodrigues" },
-            "181454": { status: "done", date: "23/12", who: "Marcio Rodrigues" },
-            "181336": { status: "done", date: "22/12", who: "Marcio Ricardo" },
-            "181339": { status: "done", date: "22/12", who: "Marcio Ricardo" },
-            "181349": { status: "done", date: "22/12", who: "Marcio Ricardo" },
-            "181350": { status: "done", date: "22/12", who: "Marcio Ricardo" },
-            "181352": { status: "done", date: "22/12", who: "Marcio Ricardo" },
-            "181418": { status: "done", date: "23/12", who: "Marcio Ricardo" },
-            "181389": { status: "done", date: "23/12", who: "Marcio Ricardo" },
-            "181380": { status: "done", date: "22/12", who: "Fernando Sebastiao" },
-            "179527": { status: "done", date: "21/12", who: "Luciano Jose" },
-            "179927": { status: "done", date: "21/12", who: "Luciano Jose" },
-            "180163": { status: "done", date: "22/12", who: "Luciano Jose" },
-            "180164": { status: "done", date: "22/12", who: "Luciano Jose" },
-            "180290": { status: "done", date: "22/12", who: "Luciano Jose" },
-            "180300": { status: "done", date: "22/12", who: "Luciano Jose" },
-            "181321": { status: "done", date: "22/12", who: "Luciano Jose" },
-            "181364": { status: "done", date: "22/12", who: "Fabio Henrique" },
-            "181444": { status: "done", date: "23/12", who: "Fabio Henrique" },
-            "181456": { status: "done", date: "23/12", who: "Fabio Henrique" },
-            "181438": { status: "done", date: "22/12", who: "Claudio Roberto" },
-            "181437": { status: "done", date: "23/12", who: "Claudio Roberto" },
-            "181455": { status: "done", date: "23/12", who: "Elton De Jesus" },
-            "181343": { status: "done", date: "22/12", who: "Raonny Cruz" },
-            "181344": { status: "done", date: "22/12", who: "Raonny Cruz" },
-            "181348": { status: "done", date: "22/12", who: "Raonny Cruz" },
-            "181351": { status: "done", date: "22/12", who: "Raonny Cruz" },
-            "179002": { status: "done", date: "23/12", who: "Raonny Cruz" },
-            "178979": { status: "done", date: "23/12", who: "Raonny Cruz" },
-            "178995": { status: "done", date: "23/12", who: "Raonny Cruz" },
-            "181415": { status: "done", date: "23/12", who: "Raonny Cruz" },
-            "181416": { status: "done", date: "23/12", who: "Raonny Cruz" },
-            "181417": { status: "done", date: "23/12", who: "Raonny Cruz" },
-            "179068": { status: "done", date: "23/12", who: "Raonny Cruz" },
-            "181228": { status: "done", date: "20/12", who: "Ricardo Aparecido" },
-            "170243": { status: "done", date: "20/12", who: "Ricardo Aparecido" },
-            "170244": { status: "done", date: "20/12", who: "Ricardo Aparecido" },
-            "170246": { status: "done", date: "20/12", who: "Ricardo Aparecido" },
-            "170231": { status: "done", date: "20/12", who: "Ricardo Aparecido" },
-            "170363": { status: "done", date: "20/12", who: "Ricardo Aparecido" },
-            "170373": { status: "done", date: "20/12", who: "Ricardo Aparecido" },
-            "177656": { status: "done", date: "20/12", who: "Ricardo Aparecido" },
-            "181366": { status: "done", date: "22/12", who: "Bruno Donizete" },
-            "181441": { status: "done", date: "23/12", who: "Bruno Donizete" },
-            "181241": { status: "done", date: "20/12", who: "Diego Aparecido" },
-            "181244": { status: "done", date: "20/12", who: "Diego Aparecido" },
-            "181377": { status: "done", date: "22/12", who: "Diego Aparecido" },
-            "181378": { status: "done", date: "22/12", who: "Diego Aparecido" },
-            "181375": { status: "done", date: "22/12", who: "Diego Aparecido" },
-            "181376": { status: "done", date: "22/12", who: "Diego Aparecido" },
-            "181382": { status: "done", date: "23/12", who: "Diego Aparecido" },
-            "181383": { status: "done", date: "22/12", who: "Paolo Sergio" },
-            "181387": { status: "done", date: "22/12", who: "Paolo Sergio" },
-            "181319": { status: "done", date: "22/12", who: "Paolo Sergio" },
-            "181365": { status: "done", date: "22/12", who: "Ricardo De Almeida" },
-            "181103": { status: "done", date: "19/12", who: "Fernando Santos" },
-            "181213": { status: "done", date: "20/12", who: "Fernando Santos" },
-            "181301": { status: "done", date: "20/12", who: "Fernando Santos" },
-            "181318": { status: "done", date: "21/12", who: "Fernando Santos" },
-            "181370": { status: "done", date: "22/12", who: "Fernando Santos" },
-            "181451": { status: "done", date: "23/12", who: "Fernando Santos" },
-            "181452": { status: "done", date: "23/12", who: "Fernando Santos" },
-            "181374": { status: "done", date: "22/12", who: "Douglas Luis" },
-            "181381": { status: "done", date: "22/12", who: "Douglas Luis" },
-            "181388": { status: "done", date: "23/12", who: "Douglas Luis" },
-            "180150": { status: "done", date: "20/12", who: "Lucio Silveira" },
-            "181302": { status: "done", date: "20/12", who: "Lucio Silveira" },
-            "181303": { status: "done", date: "21/12", who: "Lucio Silveira" },
-            "181446": { status: "done", date: "23/12", who: "Lucio Silveira" },
-            "181386": { status: "done", date: "22/12", who: "Tiago Felix" },
-            "181385": { status: "done", date: "22/12", who: "Tiago Felix" },
-            "181384": { status: "done", date: "22/12", who: "Tiago Felix" },
-            "181362": { status: "done", date: "22/12", who: "Vinicius Rodrigues" },
-            "181363": { status: "done", date: "22/12", who: "Vinicius Rodrigues" },
-            "181337": { status: "done", date: "22/12", who: "Felipe Augusto" },
-            "179142": { status: "done", date: "23/12", who: "Felipe Augusto" },
-            "178953": { status: "done", date: "23/12", who: "Felipe Augusto" }
+            "180936": { status: "done", date: "24/12", who: "Marcio Pereira" },
+
+            // Plástico
+            "158371": { status: "partial", date: "23/12", who: "Claudio Roberto" }, // Started
+            "177073": { status: "partial", date: "23/12", who: "Luciano Silveira" } // Started
         };
 
+        // --- LISTA OFICIAL (97 ITENS) ---
         const DATA_PROGRAMADA = [
-            // LINHAS
+            // Linhas
             { om: "156878", asset: "452159-801 - L5", task: "Preventiva limpeza painéis", sector: "Linhas" },
             { om: "157453", asset: "510313/8 - TESTE FUNC. Nº 01 L4", task: "Preventiva Anual - Backlog.", sector: "Linhas" },
             { om: "157454", asset: "510425 - TESTE FUNC. Nº 02 L4", task: "Preventiva Anual - Backlog.", sector: "Linhas" },
@@ -331,34 +184,34 @@
             { om: "177587", asset: "510891 - L3", task: "Preventiva limpeza painéis", sector: "Linhas" },
             { om: "177588", asset: "511094 - L3", task: "Preventiva limpeza painéis", sector: "Linhas" },
             { om: "177589", asset: "508792-17 L4", task: "Preventiva limpeza painéis", sector: "Linhas" },
-            { om: "180885", asset: "19664/3-Teste funcional L2", task: "Verificação e troca de barramentos", sector: "Linhas" },
-            { om: "180886", asset: "Bomba de vácuo L2", task: "Realizar revisão nos sistema de vácuo", sector: "Linhas" },
-            { om: "180887", asset: "19664/1-Teste motoca L2", task: "Revisão geral mecânica e elétrica", sector: "Linhas" },
-            { om: "180888", asset: "510169.58-Elevador de topo L3", task: "Verificação dos trilhos", sector: "Linhas" },
-            { om: "180890", asset: "510169/6-Manipulador de base L3", task: "Verificar garras e conjunto", sector: "Linhas" },
-            { om: "180891", asset: "Gangorra", task: "Troca do componente e revisão", sector: "Linhas" },
-            { om: "180893", asset: "Mezanino L3", task: "Troca de correntes e revisão", sector: "Linhas" },
-            { om: "180894", asset: "Teste funcional (2 piores) L4", task: "Troca de correia", sector: "Linhas" },
-            { om: "180895", asset: "Esteira talisca pós transf. L4", task: "Verificar desgaste corrente", sector: "Linhas" },
-            { om: "180896", asset: "510313/5-Esteira de talisca 2 L4", task: "Revisão nos componentes", sector: "Linhas" },
-            { om: "180898", asset: "Girador pré elevador L4", task: "Limpeza, verificação elétrica", sector: "Linhas" },
-            { om: "180899", asset: "451485/03-Elevador final L4", task: "Limpeza, verificação dos componentes", sector: "Linhas" },
-            { om: "180900", asset: "512655/02-Célula parafusamento", task: "Verificar componentes elevadores", sector: "Linhas" },
-            { om: "180901", asset: "510313-Esteira de montagem mesa", task: "Verificação dos elevadores", sector: "Linhas" },
+            { om: "180885", asset: "19664/3-Teste funcional L2", task: "Verificação e troca", sector: "Linhas" },
+            { om: "180886", asset: "Bomba de vácuo L2", task: "Revisão sistema vácuo", sector: "Linhas" },
+            { om: "180887", asset: "19664/1-Teste motoca L2", task: "Revisão geral", sector: "Linhas" },
+            { om: "180888", asset: "510169.58-Elevador de topo L3", task: "Verificação trilhos", sector: "Linhas" },
+            { om: "180890", asset: "510169/6-Manipulador de base L3", task: "Verificar garras", sector: "Linhas" },
+            { om: "180891", asset: "Gangorra", task: "Troca componente", sector: "Linhas" },
+            { om: "180893", asset: "Mezanino L3", task: "Troca correntes", sector: "Linhas" },
+            { om: "180894", asset: "Teste funcional (2 piores) L4", task: "Troca correia", sector: "Linhas" },
+            { om: "180895", asset: "Esteira talisca pós transf. L4", task: "Verificar desgaste", sector: "Linhas" },
+            { om: "180896", asset: "510313/5-Esteira de talisca 2 L4", task: "Revisão componentes", sector: "Linhas" },
+            { om: "180898", asset: "Girador pré elevador L4", task: "Limpeza, verificação", sector: "Linhas" },
+            { om: "180899", asset: "451485/03-Elevador final L4", task: "Limpeza, verificação", sector: "Linhas" },
+            { om: "180900", asset: "512655/02-Célula parafusamento", task: "Verificar elevadores", sector: "Linhas" },
+            { om: "180901", asset: "510313-Esteira de montagem mesa", task: "Verificação elevadores", sector: "Linhas" },
             { om: "180903", asset: "Esteira roletes estanqueidade", task: "Seccionar esteira", sector: "Linhas" },
-            { om: "180906", asset: "451771-IFA", task: "Troca das borrachas dos empilhadores", sector: "Linhas" },
-            { om: "180907", asset: "451771-Esteira entrada DOCA", task: "Tracionamento de roletes", sector: "Linhas" },
-            { om: "180909", asset: "451771-Esteiras carregamento IFA", task: "Lubrificação e verificação", sector: "Linhas" },
-            { om: "180910", asset: "451771-Systec velha", task: "Verificação componentes pentes", sector: "Linhas" },
-            { om: "181088", asset: "PARAFUSAMENTO CAVID. L4", task: "Dry run, Validação drives", sector: "Linhas" },
-            { om: "181089", asset: "célula de colagem de mesa", task: "criação de nova receita", sector: "Linhas" },
-            { om: "181090", asset: "Teste funcional L2", task: "Revisão das caixinhas", sector: "Linhas" },
-            { om: "181331", asset: "Manipulador X e Y - L2", task: "Retirada do inversor da esteira", sector: "Linhas" },
+            { om: "180906", asset: "451771-IFA", task: "Troca borrachas", sector: "Linhas" },
+            { om: "180907", asset: "451771-Esteira entrada DOCA", task: "Tracionamento roletes", sector: "Linhas" },
+            { om: "180909", asset: "451771-Esteiras carregamento IFA", task: "Lubrificação", sector: "Linhas" },
+            { om: "180910", asset: "451771-Systec velha", task: "Verificação pentes", sector: "Linhas" },
+            { om: "181088", asset: "PARAFUSAMENTO CAVID. L4", task: "Dry run, Validação", sector: "Linhas" },
+            { om: "181089", asset: "célula de colagem de mesa", task: "nova receita", sector: "Linhas" },
+            { om: "181090", asset: "Teste funcional L2", task: "Revisão caixinhas", sector: "Linhas" },
+            { om: "181331", asset: "Manipulador X e Y - L2", task: "Retirada inversor", sector: "Linhas" },
             
-            // METAL
-            { om: "128648", asset: "Linha 4 - Clinch", task: "Robo 33 - Troca de haste", sector: "Metal" },
-            { om: "130980", asset: "Linha de Solda", task: "troca das mangueiras pneumáticas", sector: "Metal" },
-            { om: "130988", asset: "Linha de Solda", task: "troca das mangueiras pneumáticas", sector: "Metal" },
+            // Metal
+            { om: "128648", asset: "Linha 4 - Clinch", task: "Robo 33 - Troca haste", sector: "Metal" },
+            { om: "130980", asset: "Linha de Solda", task: "torca mangueiras", sector: "Metal" },
+            { om: "130988", asset: "Linha de Solda", task: "torca mangueiras", sector: "Metal" },
             { om: "157197", asset: "linha de cavidades", task: "Estação 5050 - Amortecedor", sector: "Metal" },
             { om: "165138", asset: "LCL", task: "Preventiva mecânica", sector: "Metal" },
             { om: "165967", asset: "LCL", task: "Preventiva mecânica", sector: "Metal" },
@@ -366,15 +219,15 @@
             { om: "167545", asset: "LCL", task: "Preventiva mecânica", sector: "Metal" },
             { om: "168299", asset: "LCL", task: "Preventiva mecânica", sector: "Metal" },
             { om: "177256", asset: "linha de cavidades", task: "Solda costura - mangueiras", sector: "Metal" },
-            { om: "180775", asset: "linha de cavidades", task: "Chiller das prensas - Rolamentos", sector: "Metal" },
-            { om: "180776", asset: "linha de cavidades", task: "Solda costura - Filtro retorno", sector: "Metal" },
-            { om: "180777", asset: "Wrapper", task: "Investigar vazamento de óleo", sector: "Metal" },
-            { om: "180778", asset: "Prensa 108", task: "Prev. endireitador de chapas", sector: "Metal" },
-            { om: "180779", asset: "Prensa 117", task: "Prev. alimentador de chapas", sector: "Metal" },
-            { om: "180786", asset: "Linha 4 - Clinch", task: "Unidade hidráulida robô 30 e 31", sector: "Metal" },
+            { om: "180775", asset: "linha de cavidades", task: "Chiller prensas - Rolamentos", sector: "Metal" },
+            { om: "180776", asset: "linha de cavidades", task: "Solda costura - Filtro", sector: "Metal" },
+            { om: "180777", asset: "Wrapper", task: "Investigar vazamento", sector: "Metal" },
+            { om: "180778", asset: "Prensa 108", task: "Prev. endireitador", sector: "Metal" },
+            { om: "180779", asset: "Prensa 117", task: "Prev. alimentador", sector: "Metal" },
+            { om: "180786", asset: "Linha 4 - Clinch", task: "Unidade hidráulida", sector: "Metal" },
             { om: "180790", asset: "Linha 4 - Clinch", task: "Carro ejetor - Fuso", sector: "Metal" },
-            { om: "180794", asset: "Linha 4 - Clinch", task: "Dobradeira - Torque motores", sector: "Metal" },
-            { om: "180795", asset: "Linha 4 - Clinch", task: "Revisão sensores e cabeamentos", sector: "Metal" },
+            { om: "180794", asset: "Linha 4 - Clinch", task: "Dobradeira - Torque", sector: "Metal" },
+            { om: "180795", asset: "Linha 4 - Clinch", task: "Revisão sensores", sector: "Metal" },
             { om: "180803", asset: "Painéis Esmaltação", task: "Limpeza e reaperto", sector: "Metal" },
             { om: "180804", asset: "Painéis Pintura", task: "Limpeza e reaperto", sector: "Metal" },
             { om: "180805", asset: "Painéis Cavidades", task: "Limpeza e reaperto", sector: "Metal" },
@@ -382,22 +235,23 @@
             { om: "180807", asset: "Painéis Press Shop", task: "Limpeza e reaperto", sector: "Metal" },
             { om: "180937", asset: "linha de cavidades", task: "Chillers - Prensas", sector: "Metal" },
             { om: "180939", asset: "linha de cavidades", task: "Chillers - Lasers", sector: "Metal" },
-            { om: "180942", asset: "Pintura", task: "Queimadores (42)", sector: "Metal" },
-            { om: "180943", asset: "Pintura", task: "Queimadores (43)", sector: "Metal" },
-            { om: "180944", asset: "Pintura", task: "Migração controle CLP", sector: "Metal" },
+            { om: "180942", asset: "Pintura", task: "Queimadores (2x)", sector: "Metal" },
+            { om: "180943", asset: "Pintura", task: "Queimadores (2x)", sector: "Metal" },
+            { om: "180944", asset: "Pintura", task: "Migração CLP", sector: "Metal" },
             { om: "181007", asset: "Painéis da SFB", task: "Limpeza e reaperto", sector: "Metal" },
-            { om: "150815", asset: "Prensa 123", task: "Prev. alimentador de chapas", sector: "Metal" },
+            { om: "150815", asset: "Prensa 123", task: "Prev. alimentador", sector: "Metal" },
             { om: "180936", asset: "linha de cavidades", task: "Chillers - Dielétrico", sector: "Metal" },
 
-            // PLASTICO
+            // Plastico
             { om: "158371", asset: "503804-INJETORA 1100T", task: "Prev. Anual + Vazamentos", sector: "Plástico" },
-            { om: "176347", asset: "509253-INJETORA 1850T 25", task: "Preventiva anual (Elétrica)", sector: "Plástico" },
-            { om: "177073", asset: "509912-INJETORA 1850T 30", task: "Preventiva anual (Elétrica)", sector: "Plástico" },
+            { om: "176347", asset: "509253-INJETORA 1850T 25", task: "Prev. anual (Elétrica)", sector: "Plástico" },
+            { om: "177073", asset: "509912-INJETORA 1850T 30", task: "Prev. anual (Elétrica)", sector: "Plástico" },
             { om: "180679", asset: "miramondi", task: "Troca reparo cilindro", sector: "Plástico" }
         ];
 
-        const DATES = ["Todos", "20/12", "21/12", "22/12", "23/12", "24/12", "26/12", "27/12", "28/12", "29/12", "30/12", "02/01", "03/01"];
+        const DATES = ["Todos", "20/12", "21/12", "22/12", "23/12", "24/12", "26/12", "27/12", "28/12", "29/12", "30/12"];
 
+        // Helper para converter "24/12" em número comparável (1224)
         const parseDate = (dateStr) => {
             if (!dateStr) return 0;
             const [day, month] = dateStr.split('/').map(Number);
@@ -484,7 +338,7 @@
                         <div className="max-w-7xl mx-auto px-4 py-3 md:py-0 md:h-16 flex flex-col md:flex-row items-center justify-between gap-3">
                             <div className="flex items-center gap-3 w-full md:w-auto">
                                 <div className="bg-blue-700 p-2 rounded-lg text-white"><ActivityIcon size={20} /></div>
-                                <div><h1 className="text-lg md:text-xl font-bold text-slate-900">Monitoramento de Férias</h1><p className="text-xs text-slate-500 hidden md:block">Programado vs. Executado (97 Atividades)</p></div>
+                                <div><h1 className="text-lg md:text-xl font-bold text-slate-900">Monitoramento de Férias</h1><p className="text-xs text-slate-500 hidden md:block">Programado vs. Executado ({DATA_PROGRAMADA.length} Atividades)</p></div>
                             </div>
                             <div className="flex gap-2 items-center w-full md:w-auto">
                                 <div className="flex items-center bg-slate-100 rounded-lg px-2 border border-slate-200 flex-1 md:flex-none">
@@ -510,7 +364,7 @@
                         {/* Info Banner */}
                         <div className="bg-slate-100 border border-slate-200 rounded-lg p-3 flex gap-3 items-center text-sm text-slate-600">
                             <FileTextIcon size={16} className="flex-shrink-0"/>
-                            <span>Mostrando <strong>apenas as 97 OMs</strong> da Programação de Férias. Data de Referência: <strong>{CURRENT_DATE_STR}</strong>.</span>
+                            <span>Mostrando <strong>apenas as {DATA_PROGRAMADA.length} OMs</strong> da Programação de Férias. Data de Referência: <strong>{CURRENT_DATE_STR}</strong>.</span>
                         </div>
 
                         {/* KPIs */}
@@ -624,6 +478,7 @@
                                                 <span className="font-mono font-bold text-slate-600">{task.executedDate}</span>
                                             </div>
                                         </div>
+                                        {task.who !== '-' && <div className="mt-2 text-[10px] text-slate-400 italic border-t border-slate-50 pt-1">Exec: {task.who}</div>}
                                     </div>
                                 ))}
                                 {stats.filteredTasks.length === 0 && <div className="text-center p-8 text-slate-400 text-sm">Nenhum item encontrado.</div>}
@@ -650,7 +505,11 @@
                                                     <td className="p-3 font-mono text-xs font-bold text-blue-600">{task.plannedDate}</td>
                                                     <td className="p-3 font-mono text-xs font-bold text-slate-600">{task.executedDate}</td>
                                                     <td className="p-3 font-mono text-xs font-bold text-slate-600">{task.id}</td>
-                                                    <td className="p-3"><div className="font-medium text-slate-800 text-xs">{task.asset}</div><div className="text-[10px] text-slate-500">{task.task}</div></td>
+                                                    <td className="p-3">
+                                                        <div className="font-medium text-slate-800 text-xs">{task.asset}</div>
+                                                        <div className="text-[10px] text-slate-500">{task.task}</div>
+                                                        {task.who !== '-' && <div className="text-[9px] text-slate-400 italic mt-0.5">Exec: {task.who}</div>}
+                                                    </td>
                                                     <td className="p-3 text-center">
                                                         <span className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] font-bold w-full justify-center border ${
                                                             task.classification === 'Fechada' ? 'bg-emerald-100 text-emerald-700 border-emerald-200' :
