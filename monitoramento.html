@@ -53,9 +53,9 @@
         };
 
         // --- CONSTANTES GLOBAIS ---
-        const CURRENT_DATE_STR = "27/12";
+        const CURRENT_DATE_STR = "02/01";
 
-        const DATES = ["Todos", "20/12", "21/12", "22/12", "23/12", "24/12", "26/12", "27/12", "28/12", "29/12", "30/12", "02/01", "03/01"];
+        const DATES = ["Todos", "20/12", "21/12", "22/12", "23/12", "24/12", "26/12", "27/12", "28/12", "29/12", "30/12", "31/12", "02/01", "03/01"];
 
         const parseDate = (dateStr) => {
             if (!dateStr) return 0;
@@ -99,7 +99,7 @@
             "162112": { status: "done", date: "27/12", who: "Ricardo Aparecido" }, // Started
             "174416": { status: "done", date: "23/12", who: "Nilson Carlos" },
             "177393": { status: "partial", date: "22/12", who: "Gabriel Feitosa" },
-            "177560": { status: "partial", date: "23/12", who: "Leonardo Gomes" },
+            "177560": { status: "done", date: "30/12", who: "Fernando Sebastião" },
             "177578": { status: "done", date: "26/12", who: "Sergio Aparecido" },
             "177579": { status: "done", date: "27/12", who: "Sergio Aparecido" },
             "177580": { status: "done", date: "27/12", who: "Marcio Rodrigues" },            
@@ -111,11 +111,11 @@
             "177588": { status: "done", date: "22/12", who: "Sergio Aparecido" },
             "177589": { status: "done", date: "22/12", who: "Marcio Rodrigues" },
             "180891": { status: "partial", date: "22/12", who: "Jorge Augusto" },
-            "180893": { status: "partial", date: "24/12", who: "Luciano Jose" },
+            "180893": { status: "done", date: "24/12", who: "Luciano Jose" },
             "180898": { status: "partial", date: "23/12", who: "Ricardo De Almeida" },
-            "180900": { status: "partial", date: "23/12", who: "Luciano Jose" },
+            "180900": { status: "done", date: "26/12", who: "Luciano Jose" },
             "180903": { status: "partial", date: "24/12", who: "Anderson Luiz" },
-            "181088": { status: "partial", date: "24/12", who: "Elton De Jesus" },
+            "181088": { status: "done", date: "30/12", who: "Elton De Jesus" },
             "181090": { status: "partial", date: "23/12", who: "Marcos Torini" },
             "157197": { status: "done", date: "22/12", who: "Marcos Bruno" },
             "165138": { status: "done", date: "23/12", who: "Renan Fatore" },
@@ -132,9 +132,9 @@
             "181007": { status: "partial", date: "26/12", who: "Sergio Willian" }, // Updated per log
             "130980": { status: "partial", date: "27/12", who: "Renan Fatore" },
             "130988": { status: "partial", date: "27/12", who: "Marcio Pereira" },
-            "158371": { status: "partial", date: "27/12", who: "Edemilson Santos" },
-            "177073": { status: "partial", date: "27/12", who: "Edemilson Santos" },
-            "180679": { status: "partial", date: "27/12", who: "Vinicius Picon" }, // Updated per log
+            "158371": { status: "done", date: "27/12", who: "Cláudio Mazzari" },
+            "177073": { status: "done", date: "27/12", who: "Edemilson Santos" },
+            "180679": { status: "done", date: "30/12", who: "Vinicius Picon" }, // Updated per log
             "181067": { status: "done", date: "21/12", who: "Aliston Henrique" }, // Updated per log
             "181316": { status: "done", date: "21/12", who: "Aliston Henrique" }, // Updated per log
             "181085": { status: "done", date: "23/12", who: "Sergio Willian" }, // Updated per log
@@ -214,7 +214,6 @@
             "180171": { status: "done", date: "21/12", who: "Marcio Rodrigues" },
             "179553": { status: "done", date: "22/12", who: "Marcio Rodrigues" },
             "179552": { status: "done", date: "22/12", who: "Marcio Rodrigues" },
-            "177586": { status: "done", date: "23/12", who: "Marcio Rodrigues" },
             "181454": { status: "done", date: "23/12", who: "Marcio Rodrigues" },
             "181336": { status: "done", date: "22/12", who: "Felipe Augusto" }, // Updated per log
             "181339": { status: "done", date: "22/12", who: "Felipe Augusto" }, // Updated per log
@@ -291,10 +290,32 @@
             "181337": { status: "done", date: "22/12", who: "Felipe Augusto" },
             "179142": { status: "done", date: "23/12", who: "Felipe Augusto" },
             "178953": { status: "done", date: "23/12", who: "Felipe Augusto" },
-            "176347": { status: "partial", date: "28/12", who: "Rodrigo Boni" },
-            "180803": { status: "partial", date: "26/12", who: "Luan Hipólito" },
-            "180805": { status: "partial", date: "27/12", who: "Edmilton Vicentini" },
+            "176347": { status: "done", date: "28/12", who: "Fernando Moreira" },
+            "180803": { status: "done", date: "26/12", who: "Luan Hipólito" },
+            "180805": { status: "done", date: "27/12", who: "Edmilton Vicentini" },
             "150815": { status: "partial", date: "29/12", who: "Mauricio Freri" },
+            "180901": { status: "done", date: "29/12", who: "Fábio Trindade" },           
+            "177573": { status: "done", date: "30/12", who: "Sergio Aparecido" },            
+            "177574": { status: "done", date: "30/12", who: "Sergio Aparecido" },
+            "177575": { status: "done", date: "30/12", who: "Marcio Rodrigues" },
+            "177576": { status: "done", date: "30/12", who: "Marcio Rodrigues" },
+            "177577": { status: "done", date: "29/12", who: "Sergio Aparecido" },
+            "177581": { status: "done", date: "27/12", who: "Marcio Rodrigues" },
+            "180896": { status: "done", date: "29/12", who: "Fabio Trindade" },
+            "180806": { status: "partial", date: "29/12", who: "Paulo Henrique" },
+            "174522": { status: "done", date: "29/12", who: "Nilson Carlos" },
+            "175283": { status: "done", date: "30/12", who: "Nilson Carlos" },
+            "176204": { status: "done", date: "30/12", who: "Nilson Carlos" },
+            "177570": { status: "done", date: "31/12", who: "Sergio Aparecido" },
+            "177570": { status: "done", date: "31/12", who: "Sergio Aparecido" },
+            "177571": { status: "done", date: "31/12", who: "Marcio Rodrigues" },
+            "177572": { status: "done", date: "31/12", who: "Marcio Rodrigues" },
+            "180886": { status: "done", date: "31/12", who: "Sidinei Donizete" },
+            "181331": { status: "done", date: "30/12", who: "Marcos Torini" },
+            "180804": { status: "done", date: "30/12", who: "Mauricio Freri" },
+            "180942": { status: "done", date: "30/12", who: "Bruno Romão" },
+            "180777": { status: "done", date: "30/12", who: "Paulo Henrique" }
+
         };
 
         const PLANNED_DATES_MAP = {
